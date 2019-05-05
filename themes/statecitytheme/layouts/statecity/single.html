@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <th>City Data</th>
+            <th>Other cities</th>
+        </thead>
+        <tbody>
+            <td>
+                {{ .Title }}
+            </td>
+            <td>
+                {{ $url := "/Data/ar.csv" }}
+                {{ $sep := "," }}
+                {{ range $i, $r := getCSV $sep $url }}
+                <ul>
+                    <li>{{ index $r 0 }}</li>
+                    <li><a href="/{{ lower (index $r 1) }}/">{{ index $r 1 }}</a></li>
+                    <li>{{ index $r 2 }}</li>
+                </ul>
+                {{ end }}
+            </td>
+        </tbody>
+    </table>
+</body>
+</html>

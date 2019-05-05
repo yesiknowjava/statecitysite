@@ -1,0 +1,4 @@
+baseURL = "https://friendly-mahavira-416a3b.netlify.com/"
+languageCode = "en-us"
+title = "My New Hugo Site"
+theme = "statecitytheme"
